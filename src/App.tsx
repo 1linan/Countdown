@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { useCountDown } from "./hook/countDown";
+import { useLeftTime } from "./components/countDown/useLeftTime";
+import { Countdown } from "./components/countDown/index";
 
 function App() {
+  const { day, hour, minute, second } = useCountDown(
+    new Date("2023-08-20T09:52:00.000Z").getTime()
+  );
+
+  // const { endTime, nowTime } = useLeftTime(
+  //   new Date("2023-08-20T09:52:00.000Z").getTime()
+  // );
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>{day}</p>
+      <p>{hour}</p>
+      <p>{minute}</p>
+      <p>{second}</p>
+      {/* <Countdown endDate={endTime} now={nowTime} /> */}
     </div>
   );
 }
