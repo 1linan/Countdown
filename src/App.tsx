@@ -6,7 +6,7 @@ import { Countdown } from "./components/countDown/index";
 
 function App() {
   const { day, hour, minute, second } = useCountDown(
-    new Date("2023-08-20T09:52:00.000Z").getTime()
+    new Date("2023-08-22T09:52:00.000Z").getTime()
   );
 
   // const { endTime, nowTime } = useLeftTime(
