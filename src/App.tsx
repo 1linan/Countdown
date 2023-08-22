@@ -1,24 +1,24 @@
-import React from "react";
 import "./App.css";
-import { useCountDown } from "./hook/countDown";
-import { useLeftTime } from "./components/countDown/useLeftTime";
-import { Countdown } from "./components/countDown/index";
+// import { useCountDown } from "./hook/countDown";
+import { useCountDown2 } from "./hook/countDown2";
 
 function App() {
-  const { day, hour, minute, second } = useCountDown(
-    new Date("2023-08-22T09:52:00.000Z").getTime()
-  );
-
-  // const { endTime, nowTime } = useLeftTime(
-  //   new Date("2023-08-20T09:52:00.000Z").getTime()
+  // const { day, hour, minute, second } = useCountDown(
+  //   new Date("2023-08-22T09:52:00.000Z").getTime()
   // );
+  const { days, hours, minutes, seconds } = useCountDown2(
+    new Date("2023-08-22T03:35:00.000Z").getTime()
+  );
 
   return (
     <div className="App">
-      <p>{day}</p>
-      <p>{hour}</p>
-      <p>{minute}</p>
-      <p>{second}</p>
+      {/* <p>
+        {day}-{hour}-{minute}-{second}
+      </p> */}
+      <div>---------------------------------------------</div>
+      <p>
+        {days}-{hours}-{minutes}-{seconds}
+      </p>
       {/* <Countdown endDate={endTime} now={nowTime} /> */}
     </div>
   );
